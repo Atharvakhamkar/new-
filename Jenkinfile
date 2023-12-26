@@ -5,7 +5,7 @@ pipeline {
     stages { 
         stage('Git clone') { 
             steps { 
-                git branch : 'main' , credentialsId: 'CICD_jenkin', url: 'https://github.com/yourusername/your-repo.git' 
+                git branch : 'main' , credentialsId: 'CICD_jenkin', url: 'https://github.com/Atharvakhamkar/new-.git' 
             } 
         } 
          
