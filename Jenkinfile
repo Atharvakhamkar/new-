@@ -1,0 +1,45 @@
+      
+pipeline { 
+    agent any 
+     
+    stages { 
+        stage('Git clone') { 
+            steps { 
+                git branch : 'main' , credentialsId: 'CICD', url: 'https://github.com/yourusername/your-repo.git' 
+            } 
+        } 
+         
+    //     stage('Install Dependencies') { 
+    //         steps { 
+    //             sh 'pip install -r requirements.txt' 
+    //         } 
+    //     } 
+         
+    //     stage('Run Tests') { 
+    //         steps { 
+    //             sh 'python -m unittest discover' 
+    //         } 
+    //     } 
+         
+    //     stage('Build') { 
+    //         steps { 
+    //             // Add build steps if needed 
+    //         } 
+    //     } 
+         
+    //     stage('Deploy') { 
+    //         steps { 
+    //             // Add deployment steps if needed 
+    //         } 
+    //     } 
+    } 
+     
+    post { 
+        success { 
+            echo 'CI/CD pipeline successful!' 
+        } 
+        failure { 
+            echo 'CI/CD pipeline failed!' 
+        } 
+    } 
+} 
